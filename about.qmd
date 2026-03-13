@@ -1,0 +1,17 @@
+---
+title: "Materiales"
+format:
+  html:
+    theme: styles.scss
+---
+
+
+::: card-outline
+## Positron == 💖
+
+<iframe src="https://hacerpptesmipasion.netlify.app/" width="100%" height="400px" style="border: none; border-radius: 12px;"></iframe>
+
+<div class="center-text" style="margin-top: 1em;">
+[🌐 Ver en pestaña nueva](https://hacerpptesmipasion.netlify.app/){.btn .bg-pink .text-white target="_blank"}
+</div>
+:::
