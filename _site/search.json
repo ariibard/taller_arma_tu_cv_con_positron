@@ -1,47 +1,10 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "¿Qué necesitamos?",
-    "section": "",
-    "text": "¿Qué necesitamos?\nDescargá e instalá las últimas versiones de R, Positron y Quarto:\n\nR 4.2.3 o superior: https://cran.r-project.org\nPositron: https://positron.posit.co/download.html\nQuarto 1.4 or superior: https://quarto.org/docs/download\n\nAdemás necesitarás instalar el siguiente paquete:\ninstall.packages(\"typstcv\", repos = \"https://kazuyanagimoto.r-universe.dev\")\nY, en la terminal instalaremos la siguiente plantilla:\nquarto use template kazuyanagimoto/quarto-awesomecv-typst",
-    "crumbs": [
-      "¿Qué necesitamos?"
-    ]
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Materiales",
-    "section": "",
-    "text": "🌐 Ver en pestaña nueva",
-    "crumbs": [
-      "Diapositivas"
-    ]
-  },
-  {
-    "objectID": "about.html#positron",
-    "href": "about.html#positron",
-    "title": "Materiales",
-    "section": "",
-    "text": "🌐 Ver en pestaña nueva",
-    "crumbs": [
-      "Diapositivas"
-    ]
-  },
-  {
     "objectID": "slides/index.html#section",
     "href": "slides/index.html#section",
     "title": "Armá tu CV con positron",
     "section": "",
     "text": "Get ready with me para\n\narmar mi CV en"
-  },
-  {
-    "objectID": "slides/index.html#antes-de-arrancar",
-    "href": "slides/index.html#antes-de-arrancar",
-    "title": "Armá tu CV con positron",
-    "section": "Antes de arrancar",
-    "text": "Antes de arrancar\n\n¿Quién alguna vez usó Quarto? 🙋‍♀️\n\n\n¿Quién alguna vez usó RMarkdown? 🙋‍♀️\n\n\nSé qué es Quarto / Rmarkdown pero nunca lo usé 🙋‍♀️"
   },
   {
     "objectID": "slides/index.html#qué-es-positron",
@@ -56,13 +19,6 @@
     "title": "Armá tu CV con positron",
     "section": "La Interfaz de Positron",
     "text": "La Interfaz de Positron\n\n\nFuente: /https://posit-dev.github.io/positron-workshop/slides/02-explore.pdf"
-  },
-  {
-    "objectID": "slides/index.html#center-styletext-align-center-background-color6a94b4",
-    "href": "slides/index.html#center-styletext-align-center-background-color6a94b4",
-    "title": "Armá tu CV con positron",
-    "section": "{.center style=“text-align: center;”; background-color=“#6A94B4”}",
-    "text": "{.center style=“text-align: center;”; background-color=“#6A94B4”}\nGet ready with me para\n\narmar mi CV en"
   },
   {
     "objectID": "slides/index.html#positron-vs-rstudio",
@@ -93,46 +49,11 @@
     "text": "Ventajas clave de Positron\n\n\n\n⚡ Command Palette\nCada acción con Cmd+Shift+P. Búsqueda rápida y shortcuts personalizables.\n\n\n🖋️ Quarto Nativo\nPreview, insertar celdas y navegar secciones. Sin configuración adicional.\n\n\n\n📊 Data Explorer\nInspección interactiva de dataframes con filtros y estadísticas por columna.\n\n\n🐍 Python + R\nAmbos kernels en la misma sesión. Variables y plots en el mismo panel.\n\n\n\n🌿 Git Integrado\nPanel de cambios, commits y push/pull sin salir del IDE.\n\n\n🔌 Extensiones\nAcceso al registro Open VSX. Miles de extensiones disponibles.\n\n\n\n💡 La ventaja no es usar los distintos lenguajes a la vez, sino no tener que aprender un IDE diferente cuando necesitás hacer algo en Python."
   },
   {
-    "objectID": "slides/index.html#múltiples-sesiones-de-r",
-    "href": "slides/index.html#múltiples-sesiones-de-r",
-    "title": "Armá tu CV con positron",
-    "section": "Múltiples sesiones de R",
-    "text": "Múltiples sesiones de R\n\n\nPositron puede correr sesiones concurrentes:\n\n🔢   Múltiples versiones de R simultáneamente\n\n\n🐍   Mezclar sesiones de R y Python\n\n\n📋   Varias instancias de la misma versión\n\n\n🔄   Reiniciar una sesión sin afectar las otras\n\n\n\n¿Para qué sirve?\n\nTarea larga en una sesión → seguir trabajando en otra\nComparar dos versiones de R o de un paquete en vivo\nDesarrollar una vignette en sesión aislada\nProbar que tu código funciona en la versión del servidor"
-  },
-  {
     "objectID": "slides/index.html#múltiples-sesiones",
     "href": "slides/index.html#múltiples-sesiones",
     "title": "Armá tu CV con positron",
     "section": "Múltiples sesiones",
     "text": "Múltiples sesiones\n\n\nPositron puede correr sesiones concurrentes:\n\n🔢   Múltiples versiones de R simultáneamente\n\n\n🐍   Mezclar sesiones de R y Python\n\n\n📋   Varias instancias de la misma versión\n\n\n🔄   Reiniciar una sesión sin afectar las otras\n\n\n\n¿Para qué sirve?\n\nTarea larga en una sesión → seguir trabajando en otra\nComparar dos versiones de R o de un paquete en vivo\nDesarrollar una vignette en sesión aislada\nProbar que tu código funciona en la versión del servidor"
-  },
-  {
-    "objectID": "slides/index.html#rig-el-gestor-de-versiones-de-r",
-    "href": "slides/index.html#rig-el-gestor-de-versiones-de-r",
-    "title": "Armá tu CV con positron",
-    "section": "📦 rig: el gestor de versiones de R",
-    "text": "📦 rig: el gestor de versiones de R\nrig (R Installation Manager) es una herramienta de línea de comandos que te permite instalar y administrar múltiples versiones de R en la misma máquina, de forma limpia y sin conflictos.\n¿Por qué importa?\nCuando trabajás en varios proyectos, es común que uno requiera R 4.2 y otro R 4.4. Sin un gestor, cambiar de versión manualmente es tedioso y propenso a errores. rig lo hace en un solo comando.\n\nInstala y desinstala versiones de R — rig add 4.4.0, rig rm 4.2.1\nCambia la versión por defecto — rig default 4.4.0\nCrea librerías de paquetes separadas por versión — cada R tiene sus propios paquetes instalados, sin pisar los de otras versiones\n\n\n🔗 Instalación: github.com/r-lib/rig"
-  },
-  {
-    "objectID": "slides/index.html#air-formateador-de-código-r",
-    "href": "slides/index.html#air-formateador-de-código-r",
-    "title": "Armá tu CV con positron",
-    "section": "🖊️ Air: formateador de código R",
-    "text": "🖊️ Air: formateador de código R\nAir es un formateador de código R automático, similar a lo que hace prettier en JavaScript o black en Python. Su función es tomar tu código y dejarlo con un estilo consistente, sin que tengas que pensar en la indentación, los espacios o el largo de las líneas.\n\nFormatea automáticamente al guardar el archivo (si lo configurás así en Positron)\nSigue convenciones ampliamente adoptadas en la comunidad R\nConfigurable a nivel usuario (global) o por proyecto (.air.toml)\nIntegrado con Positron — aparece como formateador disponible en la configuración del editor\n\n\n🔗 Más info: posit-dev.github.io/air"
-  },
-  {
-    "objectID": "slides/index.html#snippets-en-positron",
-    "href": "slides/index.html#snippets-en-positron",
-    "title": "Armá tu CV con positron",
-    "section": "Snippets en Positron",
-    "text": "Snippets en Positron\n\n\n¿Qué son los snippets?\nAtajos de código que se expanden al escribir. Disponibles vía IntelliSense o con el comando Insert Snippet.\n\nPositron trae menos snippets built-in que RStudio, pero podés crear los tuyos.\n\nEjemplo: snippet for\nfor (variable in vector) {\n  # code to repeat\n}\n\n\nCómo configurar snippets propios\nDesde la Command Palette:\nSnippets: Configure Snippets\n3 opciones:\n\nGlobal — nivel usuario, múltiples lenguajes\nWorkspace — específico al proyecto\nPor lenguaje — solo R, solo Python…\n\nPositron usa la sintaxis TextMate (heredada de VS Code), diferente a RStudio.\npositron.posit.co/r-snippets.html"
-  },
-  {
-    "objectID": "slides/index.html#debugging-en-positron",
-    "href": "slides/index.html#debugging-en-positron",
-    "title": "Armá tu CV con positron",
-    "section": "Debugging en Positron",
-    "text": "Debugging en Positron\n\n\nHerramientas disponibles hoy:\n\ndebug(funcion) Activa modo debug en cada llamada a la función\n\n\ndebugonce(funcion) Debug solo en la próxima llamada\n\n\nbrowser() Pausa la ejecución en ese punto del código\n\n\n🚧   Breakpoints visuales — próximamente\n\n\n\nFlujo típico con browser()\nmi_funcion &lt;- function(x) {\n  browser()        # &lt;-- pausa aquí\n  resultado &lt;- x * 2\n  return(resultado)\n}\n\nmi_funcion(5)\n# Positron abre el debugger\n# podés inspeccionar variables,\n# avanzar paso a paso con n,\n# continuar con c, salir con Q\n\n\nEjemplo completo: github.com/jennybc/debugging"
   },
   {
     "objectID": "slides/index.html#rstudio-proyectos-con-.rproj",
@@ -156,10 +77,83 @@
     "text": "⚠️ El archivo .Rproj en Positron\n\nPositron ignora el contenido del .Rproj: no lee sus preferencias.\nPreferencias como UseSpacesForTab, MarkdownWrap o NumSpacesForTab deberán configurarse manualmente en Positron.\nPara proyectos Quarto, algunas de esas preferencias conviene migrarlas a _quarto.yml."
   },
   {
+    "objectID": "slides/index.html#antes-de-arrancar",
+    "href": "slides/index.html#antes-de-arrancar",
+    "title": "Armá tu CV con positron",
+    "section": "Antes de arrancar",
+    "text": "Antes de arrancar\n\n¿Quién alguna vez usó Quarto? 🙋‍♀️\n\n\n¿Quién alguna vez usó RMarkdown? 🙋‍♀️\n\n\nSé qué es Quarto / Rmarkdown pero nunca lo usé 🙋‍♀️"
+  },
+  {
+    "objectID": "slides/index.html#extensiones-en-quarto",
+    "href": "slides/index.html#extensiones-en-quarto",
+    "title": "Armá tu CV con positron",
+    "section": "Extensiones en {quarto}",
+    "text": "Extensiones en {quarto}\nEs un paquete que amplía las capacidades del sistema de publicación Quarto. Quarto por sí solo ya permite generar documentos, sitios web, presentaciones y más desde R o Python; una extensión agrega funcionalidades extra, como nuevos formatos de salida, plantillas, filtros de transformación, shortcodes personalizados o plugins para presentaciones."
+  },
+  {
+    "objectID": "slides/index.html#awesomecv",
+    "href": "slides/index.html#awesomecv",
+    "title": "Armá tu CV con positron",
+    "section": "{awesomecv}",
+    "text": "{awesomecv}\n\n\n\n\n\n\n\nFuente\n\n\nPlantilla de Kazuya Nagimoto — quarto-awesomecv-typst"
+  },
+  {
+    "objectID": "slides/index.html#instalación",
+    "href": "slides/index.html#instalación",
+    "title": "Armá tu CV con positron",
+    "section": "Instalación",
+    "text": "Instalación\nEn nuestra terminal:\n\nTerminal\nquarto use template kazuyanagimoto/quarto-awesomecv-typst\n\nInstalamos el paquete en r. Ponemos en la consola:\n\nConsola\ninstall.packages(\"typstcv\", repos = \"https://kazuyanagimoto.r-universe.dev\")\n# Instalamos tidyverse también que nos va a permitir manipular los datos\ninstall.packages(\"tidyverse\")"
+  },
+  {
+    "objectID": "slides/index.html#the-boy-who-lived-is-a-data-scientist",
+    "href": "slides/index.html#the-boy-who-lived-is-a-data-scientist",
+    "title": "Armá tu CV con positron",
+    "section": "The boy who lived is a data scientist",
+    "text": "The boy who lived is a data scientist\n\n\n\n\nHarry Potter lleva 20 años como Auror, pero descubrió que le apasiona el análisis de datos. Ahora quiere postularse como Analista de Ciencias de Datos en el Ministerio de Magia. Para mostrar cómo funciona esta herramienta, vamos a usar su caso"
+  },
+  {
+    "objectID": "slides/index.html#armamos-nuestro-excel-o-csv",
+    "href": "slides/index.html#armamos-nuestro-excel-o-csv",
+    "title": "Armá tu CV con positron",
+    "section": "Armamos nuestro excel o csv",
+    "text": "Armamos nuestro excel o csv"
+  },
+  {
+    "objectID": "slides/index.html#section-1",
+    "href": "slides/index.html#section-1",
+    "title": "Armá tu CV con positron",
+    "section": "",
+    "text": "Otras cositas de"
+  },
+  {
     "objectID": "slides/index.html#ia-positron-assistant",
     "href": "slides/index.html#ia-positron-assistant",
     "title": "Armá tu CV con positron",
     "section": "🤖 IA: Positron Assistant",
     "text": "🤖 IA: Positron Assistant\nPositron incluye Positron Assistant, un cliente de IA integrado directamente en el IDE. Tiene dos modos:\n\nSe activa desde el ícono en la barra lateral izquierda.\nPodés agregar contexto: el archivo actual, una selección de código, o datos del entorno.\nSe puede usar también dentro del editor."
+  },
+  {
+    "objectID": "slides/index.html#rig-el-gestor-de-versiones-de-r",
+    "href": "slides/index.html#rig-el-gestor-de-versiones-de-r",
+    "title": "Armá tu CV con positron",
+    "section": "📦 rig: el gestor de versiones de R",
+    "text": "📦 rig: el gestor de versiones de R\nrig (R Installation Manager) es una herramienta de línea de comandos que te permite instalar y administrar múltiples versiones de R en la misma máquina, de forma limpia y sin conflictos.\n¿Por qué importa?\nCuando trabajás en varios proyectos, es común que uno requiera R 4.2 y otro R 4.4. Sin un gestor, cambiar de versión manualmente es tedioso y propenso a errores. rig lo hace en un solo comando.\n\nInstala y desinstala versiones de R — rig add 4.4.0, rig rm 4.2.1\nCambia la versión por defecto — rig default 4.4.0\nCrea librerías de paquetes separadas por versión — cada R tiene sus propios paquetes instalados, sin pisar los de otras versiones\n\n\n🔗 Instalación: github.com/r-lib/rig"
+  },
+  {
+    "objectID": "slides/index.html#air-formateador-de-código-r",
+    "href": "slides/index.html#air-formateador-de-código-r",
+    "title": "Armá tu CV con positron",
+    "section": "🖊️ Air: formateador de código R",
+    "text": "🖊️ Air: formateador de código R\nAir es un formateador de código R automático, similar a lo que hace prettier en JavaScript o black en Python. Su función es tomar tu código y dejarlo con un estilo consistente, sin que tengas que pensar en la indentación, los espacios o el largo de las líneas.\n\nFormatea automáticamente al guardar el archivo (si lo configurás así en Positron)\nSigue convenciones ampliamente adoptadas en la comunidad R\nConfigurable a nivel usuario (global) o por proyecto (.air.toml)\nIntegrado con Positron — aparece como formateador disponible en la configuración del editor\n\n\n🔗 Más info: posit-dev.github.io/air"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "¿Qué necesitamos?",
+    "section": "",
+    "text": "¿Qué necesitamos?\nDescargá e instalá las últimas versiones de R, Positron y Quarto:\n\nR 4.2.3 o superior: https://cran.r-project.org\nPositron: https://positron.posit.co/download.html\nQuarto 1.4 or superior: https://quarto.org/docs/download\n\nAdemás necesitarás instalar los siguientes paquetes:\ninstall.packages(\"typstcv\", repos = \"https://kazuyanagimoto.r-universe.dev\")\ninstall.packages(\"tidyverse\")\nY, en la terminal instalaremos la siguiente plantilla:\nquarto use template kazuyanagimoto/quarto-awesomecv-typst",
+    "crumbs": [
+      "¿Qué necesitamos?"
+    ]
   }
 ]

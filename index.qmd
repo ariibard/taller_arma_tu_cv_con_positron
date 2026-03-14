@@ -12,20 +12,15 @@ Descargá e instalá las últimas versiones de R, Positron y Quarto:
 
 -   Quarto 1.4 or superior: <https://quarto.org/docs/download>
 
-Además necesitarás instalar el siguiente paquete:
+Además necesitarás instalar los siguientes paquetes:
 
-```r
+``` r
 install.packages("typstcv", repos = "https://kazuyanagimoto.r-universe.dev")
+install.packages("tidyverse")
 ```
 
 Y, en la terminal instalaremos la siguiente plantilla:
 
-```r
+``` r
 quarto use template kazuyanagimoto/quarto-awesomecv-typst
-
-```
-
-```{r}
-library(tidyverse)
-a -> prueba
 ```

@@ -27,6 +27,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-74f9027c05c2ada624682ba8bf0e4205.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -121,6 +187,26 @@
       margin-right: 0; 
     }
   </style>
+  <link href="../site_libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
+
+  <script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+  <link href="../site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+
+  <script src="../site_libs/datatables-binding-0.34.0/datatables.js"></script>
+
+  <script src="../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+
+  <link href="../site_libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+
+  <link href="../site_libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+
+  <script src="../site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
+
+  <link href="../site_libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
+
+  <script src="../site_libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
+
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -176,9 +262,9 @@
 <h2>Positron vs RStudio</h2>
 <table class="caption-top">
 <colgroup>
-<col style="width: 6%">
-<col style="width: 44%">
-<col style="width: 48%">
+<col style="width: 19%">
+<col style="width: 38%">
+<col style="width: 41%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -339,6 +425,102 @@
 <li>Preferencias como <code>UseSpacesForTab</code>, <code>MarkdownWrap</code> o <code>NumSpacesForTab</code> deberán configurarse manualmente en Positron.</li>
 <li>Para proyectos Quarto, algunas de esas preferencias conviene migrarlas a <code>_quarto.yml</code>.</li>
 </ul>
+</section></section>
+<section>
+<section id="armemos-nuestro-cv" class="title-slide slide level1 center" style="text-align: center;" data-background-color="#6A94B4">
+<h1>Armemos nuestro <strong>CV</strong></h1>
+
+</section>
+<section id="antes-de-arrancar" class="slide level2">
+<h2>Antes de arrancar</h2>
+<div class="fragment fade-in-then-out r-fit-text">
+<p>¿Quién alguna vez usó <code>Quarto</code>? 🙋‍♀️</p>
+</div>
+<div class="fragment fade-in-then-out r-fit-text">
+<p>¿Quién alguna vez usó <code>RMarkdown</code>? 🙋‍♀️</p>
+</div>
+<div class="fragment fade-up r-fit-text">
+<p>Sé qué es <code>Quarto</code> / <code>Rmarkdown</code> pero nunca lo usé 🙋‍♀️</p>
+</div>
+</section></section>
+<section id="quarto" class="title-slide slide level1 center">
+<h1>Quarto</h1>
+
+<img data-src="assets/horst-qmd-render-schema.png" class="r-stretch"></section>
+
+<section>
+<section id="typst" class="title-slide slide level1 center">
+<h1><code>{typst}</code></h1>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img data-src="https://cdn-1.webcatalog.io/catalog/typst/typst-icon-filled-256.png?v=1714780823305"></p>
+</div><div class="column" style="width:60%;">
+<p>Es un sistema de composición de documentos (como Latex). Mucho más intuitivo y rápido.</p>
+</div></div>
+<div class="footer">
+<p>Más info en <a href="https://typst.app/">typst.app</a></p>
+</div>
+</section>
+<section id="extensiones-en-quarto" class="slide level2">
+<h2>Extensiones en <code>{quarto}</code></h2>
+<p>Es un paquete que amplía las capacidades del sistema de publicación Quarto. Quarto por sí solo ya permite generar documentos, sitios web, presentaciones y más desde R o Python; una extensión agrega funcionalidades extra, como nuevos formatos de salida, plantillas, filtros de transformación, shortcodes personalizados o plugins para presentaciones.</p>
+</section>
+<section id="awesomecv" class="slide level2">
+<h2><code>{awesomecv}</code></h2>
+
+<img data-src="assets/github.png" class="r-stretch"><div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Fuente</strong></p>
+</div>
+<div class="callout-content">
+<p>Plantilla de Kazuya Nagimoto — <a href="https://github.com/kazuyanagimoto/quarto-awesomecv-typst">quarto-awesomecv-typst</a></p>
+</div>
+</div>
+</div>
+</section>
+<section id="instalación" class="slide level2">
+<h2>Instalación</h2>
+<p>En nuestra terminal:</p>
+<div class="codewindow">
+<p>Terminal</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> use template kazuyanagimoto/quarto-awesomecv-typst</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Instalamos el paquete en <code>r</code>. Ponemos en la consola:</p>
+<div class="codewindow">
+<p>Consola</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"typstcv"</span>, <span class="at">repos =</span> <span class="st">"https://kazuyanagimoto.r-universe.dev"</span>)</span>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Instalamos tidyverse también que nos va a permitir manipular los datos</span></span>
+<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="the-boy-who-lived-is-a-data-scientist" class="slide level2">
+<h2>The boy who lived is a data scientist</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img data-src="assets/hp.jpg"></p>
+</div><div class="column" style="width:60%;">
+<p>Harry Potter lleva 20 años como Auror, pero descubrió que le apasiona el análisis de datos. Ahora quiere postularse como Analista de Ciencias de Datos en el Ministerio de Magia. Para mostrar cómo funciona esta herramienta, vamos a usar su caso</p>
+</div></div>
+</section>
+<section id="armamos-nuestro-excel-o-csv" class="slide level2 smaller">
+<h2>Armamos nuestro excel o csv</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div class="datatables html-widget html-fill-item" id="htmlwidget-280222a8c128cb252220" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-280222a8c128cb252220">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11"],["Graduado – Programa de Formación de Aurores","A.N.E.A.S. – Colegio Hogwarts","Jefe de Aurores","Auror Senior","Profesor de Defensa (temporal)","Consultor – Clasificación de Artefactos Oscuros","Investigador de campo","Habilidades técnicas","Idiomas","Ejército de Dumbledore – Fundador e Instructor","Docente invitado – Evaluación de Amenazas"],["1998-09-01","1991-09-01","2007-01-01","2001-07-01","2013-03-01","2010-06-01","2020-01-01",null,null,"1995-09-01","2018-04-01"],["2001-06-30","1998-06-30","2019-12-31","2006-12-31","2013-07-31","2011-12-31","2022-06-30",null,null,"1996-06-30","2018-04-30"],[null,null,null,null,null,"Proyecto de Taxonomía de Amenazas Mágicas","Modelado Predictivo de Amenazas con R",null,null,null,null],["Oficina de Aurores – Ministerio de Magia","Colegio Hogwarts de Magia y Hechicería","Oficina de Aurores – Ministerio de Magia","Oficina de Aurores – Ministerio de Magia","Colegio Hogwarts de Magia y Hechicería","Departamento de Misterios","División de Analítica de los Insondables",null,null,"Colegio Hogwarts de Magia y Hechicería","Academia de Artes Dramáticas de Hechicería"],["Londres, Reino Unido","Escocia, Reino Unido","Londres, Reino Unido","Londres, Reino Unido","Escocia, Reino Unido","Londres, Reino Unido","Londres, Reino Unido",null,null,"Escocia, Reino Unido","Londres, Reino Unido"],["Completó el programa élite de formación de Aurores de tres años. Primero de la cohorte en Defensa Contra las Artes Oscuras y operaciones de campo.","Sobresaliente en Defensa Contra las Artes Oscuras. Obtuvo los A.N.E.A.S. necesarios para la calificación de Auror a pesar de las interrupciones causadas por la Segunda Guerra Mágica.","Lideró un equipo de 40 Aurores. Reestructuró el departamento tras la reorganización de posguerra. Redujo los incidentes con magos oscuros en un 60% en una década.","Especializado en recuperación de artefactos oscuros de posguerra. Coordinó operaciones interdepartamentales con el Departamento de Aplicación de la Ley Mágica.","Cubrió la materia de Defensa Contra las Artes Oscuras durante la licencia del profesor titular. Introdujo talleres prácticos de evaluación de amenazas.","Co-desarrolló un marco de clasificación para objetos malditos. Los resultados fueron adoptados como estándar ministerial en 2012.","Lideró investigación exploratoria sobre el uso de modelos estadísticos (R, tidyverse, ggplot2) para anticipar actividad de magos oscuros. Produjo tres informes internos.","R (tidyverse, ggplot2, RMarkdown, Shiny), SQL, Excel. Sólida experiencia en recolección de datos de campo y métodos de investigación cualitativa.","Inglés (nativo), Pársel (nativo), Latín (funcional – literatura de maldiciones y contramaldiciones).","Fundó y lideró un grupo estudiantil de defensa de 28 miembros. Diseñó el programa, coordinó las sesiones y evaluó el progreso en condiciones institucionales adversas.","Dictó dos clases magistrales sobre evaluación práctica de amenazas para magos y brujas en entornos de alto riesgo."],["educacion","educacion","experiencia_laboral","experiencia_laboral","experiencia_laboral","investigacion","investigacion","skills","skills","experiencia_docente","experiencia_docente"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>role<\/th>\n      <th>start<\/th>\n      <th>end<\/th>\n      <th>project<\/th>\n      <th>institution<\/th>\n      <th>location<\/th>\n      <th>description<\/th>\n      <th>section<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"role","targets":1},{"name":"start","targets":2},{"name":"end","targets":3},{"name":"project","targets":4},{"name":"institution","targets":5},{"name":"location","targets":6},{"name":"description","targets":7},{"name":"section","targets":8}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="section-1" class="slide level2 center" style="text-align: center;" data-background-color="#6A94B4">
+<h2></h2>
+<div class="r-fit-text title-text text-pink">
+<p>Otras cositas de</p>
+<p><img data-src="assets/logo_positron.png" width="737"></p>
+</div>
 </section>
 <section id="ia-positron-assistant" class="slide level2 smaller">
 <h2>🤖 IA: Positron Assistant</h2>
@@ -375,24 +557,7 @@
 <blockquote>
 <p>🔗 Más info: <a href="https://posit-dev.github.io/air">posit-dev.github.io/air</a></p>
 </blockquote>
-</section>
-<section id="antes-de-arrancar" class="slide level2">
-<h2>Antes de arrancar</h2>
-<div class="fragment fade-in-then-out r-fit-text">
-<p>¿Quién alguna vez usó <code>Quarto</code>? 🙋‍♀️</p>
-</div>
-<div class="fragment fade-in-then-out r-fit-text">
-<p>¿Quién alguna vez usó <code>RMarkdown</code>? 🙋‍♀️</p>
-</div>
-<div class="fragment fade-up r-fit-text">
-<p>Sé qué es <code>Quarto</code> / <code>Rmarkdown</code> pero nunca lo usé 🙋‍♀️</p>
-</div>
 </section></section>
-<section id="quarto" class="title-slide slide level1 center">
-<h1>Quarto</h1>
-
-<img data-src="assets/horst-qmd-render-schema.png" class="r-stretch"></section>
-
 <section id="fuentes" class="title-slide slide level1 center">
 <h1>Fuentes</h1>
 <ul>
@@ -813,6 +978,82 @@
       </script>
 
       
+    
+
+    <script>
+
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
+      // slide changes (different for each slide format).
+
+      (function () {
+
+        // dispatch for htmlwidgets
+
+        function fireSlideEnter() {
+
+          const event = window.document.createEvent("Event");
+
+          event.initEvent("slideenter", true, true);
+
+          window.document.dispatchEvent(event);
+
+        }
+
+    
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          fireSlideEnter();
+
+    
+
+          // dispatch for shiny
+
+          if (window.jQuery) {
+
+            if (previousSlide) {
+
+              window.jQuery(previousSlide).trigger("hidden");
+
+            }
+
+            if (currentSlide) {
+
+              window.jQuery(currentSlide).trigger("shown");
+
+            }
+
+          }
+
+        }
+
+    
+
+        // hookup for slidy
+
+        if (window.w3c_slidy) {
+
+          window.w3c_slidy.add_observer(function (slide_num) {
+
+            // slide_num starts at position 1
+
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
+          });
+
+        }
+
+    
+
+      })();
+
+    </script>
+
+    
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

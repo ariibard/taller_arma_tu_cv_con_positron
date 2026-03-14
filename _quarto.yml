@@ -7,10 +7,10 @@ website:
   page-footer:
     left: "&copy; 2026 Ariana Bardauil"
     right: "Website construida con [Quarto](https://quarto.org/)."
-    background: "#FED7E1"
+    background: "#2A5F8E"
   
   sidebar:
-    background: "#FED7E1"
+    background: "#2A5F8E"
     logo: logo.png
     pinned: true
     align: center
