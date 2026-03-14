@@ -1,0 +1,421 @@
+/*-- POSITRON CHARLA — custom.scss --*/
+
+/* ── Fonts & Base ─────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
+
+$dark:      #0D1B2A;
+$mid:       #1B4965;
+$teal:      #00A896;
+$ltblue:    #CAE9FF;
+$offwhite:  #F0F8FF;
+$white:     #FFFFFF;
+$gray:      #B0C4D8;
+$charcoal:  #1E2D3D;
+$border:    #D0E8F8;
+
+.reveal {
+  font-family: 'Inter', sans-serif;
+  font-size: 22px;
+  color: $charcoal;
+}
+
+.reveal h1, .reveal h2, .reveal h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  color: $dark;
+  text-transform: none;
+  letter-spacing: -0.02em;
+}
+
+.reveal h2 {
+  font-size: 1.7em;
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0.5em;
+}
+
+.reveal .slide-number {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7em;
+  color: $gray;
+}
+
+.reveal .footer {
+  font-size: 0.65em;
+  color: $gray;
+}
+
+/* ── Slide headers ────────────────────────────────────────── */
+.reveal section > h2 {
+  background: $dark;
+  color: $white !important;
+  padding: 0.35em 0.7em;
+  margin: -0.6em -0.6em 0.7em -0.6em;
+  font-size: 1.4em;
+  border-left: 6px solid $teal;
+}
+
+/* ── Title slide ──────────────────────────────────────────── */
+.reveal .title-slide {
+  background-color: $dark;
+}
+
+.title-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 1em 1.5em;
+  color: $white;
+}
+
+.p-logo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #1B6CA8;
+  border: 4px solid $teal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5em;
+  font-weight: 800;
+  color: $white;
+  position: absolute;
+  top: 1.2em;
+  right: 1.5em;
+}
+
+.title-main {
+  font-size: 3.2em !important;
+  font-weight: 800 !important;
+  color: $white !important;
+  margin: 0.1em 0 !important;
+  letter-spacing: -0.03em;
+  border: none !important;
+  background: none !important;
+  padding: 0 !important;
+}
+
+.title-sub {
+  color: $teal !important;
+  font-weight: 400 !important;
+  font-size: 1.2em !important;
+  margin: 0 !important;
+}
+
+/* ── Agenda cards ─────────────────────────────────────────── */
+.agenda-card {
+  background: $white;
+  border: 1px solid $border;
+  border-radius: 8px;
+  padding: 0.9em 1em 0.9em 0;
+  margin-bottom: 0.8em;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+.agenda-num {
+  background: $teal;
+  color: $white;
+  font-weight: 700;
+  font-size: 1.3em;
+  min-width: 60px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6em 0.8em;
+  margin-right: 1em;
+  align-self: stretch;
+}
+
+/* ── Dark card ────────────────────────────────────────────── */
+.dark-card {
+  background: $mid;
+  color: $white;
+  border-radius: 10px;
+  padding: 1.2em 1.4em;
+  height: 100%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+
+  strong { color: $teal; }
+
+  ul {
+    margin: 0.6em 0 0 0;
+    padding-left: 1.2em;
+  }
+
+  li { margin: 0.3em 0; }
+
+  pre, code {
+    background: rgba(255,255,255,0.08);
+    color: $ltblue;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.82em;
+    padding: 0.9em 1em;
+    border-radius: 6px;
+    display: block;
+    margin-top: 0.6em;
+    white-space: pre;
+  }
+}
+
+/* ── Feature rows ─────────────────────────────────────────── */
+.feature-row {
+  background: $white;
+  border: 1px solid $border;
+  border-radius: 8px;
+  padding: 0.65em 1em;
+  margin-bottom: 0.55em;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  font-size: 0.95em;
+  color: $charcoal;
+}
+
+/* ── Layout diagram ───────────────────────────────────────── */
+.layout-diagram {
+  display: flex;
+  gap: 6px;
+  height: 340px;
+  margin-top: 0.5em;
+  align-items: stretch;
+}
+
+.zone {
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.78em;
+  font-weight: 600;
+  padding: 0.5em;
+  line-height: 1.4;
+}
+
+.zone-activity  { background: $mid;         color: $white;    min-width: 58px; }
+.zone-sidebar   { background: #2C6E96;      color: $white;    min-width: 130px; }
+.zone-right     { display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.zone-editor    { background: #E8F4FD;      color: $dark;     flex: 1.4;
+                  border-top: 4px solid $teal; }
+.zone-panel     { background: #D5EDF8;      color: $dark;     flex: 0.8; }
+.zone-secondary { background: #EAF4FF;      color: $dark;     min-width: 180px; }
+
+/* ── Comparison table ─────────────────────────────────────── */
+.reveal table.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88em;
+
+  thead tr th {
+    background: $dark;
+    color: $white;
+    padding: 0.6em 0.8em;
+    text-align: left;
+    font-weight: 700;
+
+    &:nth-child(2) { background: #C0392B; }
+    &:nth-child(3) { background: #1B8A6B; }
+  }
+
+  tbody tr:nth-child(odd)  td { background: $white; }
+  tbody tr:nth-child(even) td { background: #EEF5FC; }
+
+  td {
+    padding: 0.55em 0.8em;
+    border: 1px solid $border;
+    color: $charcoal;
+  }
+}
+
+/* ── Shortcut cards ───────────────────────────────────────── */
+.shortcut-card {
+  background: $white;
+  border: 1px solid $border;
+  border-radius: 8px;
+  margin-bottom: 0.55em;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+}
+
+.shortcut-key {
+  display: block;
+  background: $teal;
+  color: $white;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8em;
+  font-weight: 600;
+  padding: 0.3em 0.8em;
+}
+
+.shortcut-card > *:last-child {
+  display: block;
+  padding: 0.35em 0.8em 0.4em;
+  font-size: 0.88em;
+  color: $charcoal;
+}
+
+/* ── Feature cards ────────────────────────────────────────── */
+.feature-card {
+  background: $white;
+  border: 1px solid $border;
+  border-left: 4px solid $teal;
+  border-radius: 8px;
+  padding: 0.8em 1em;
+  margin-bottom: 0.65em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  font-size: 0.88em;
+  color: $charcoal;
+
+  strong { color: $mid; font-size: 1.05em; }
+}
+
+/* ── Step rows ────────────────────────────────────────────── */
+.step-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7em;
+  margin-bottom: 0.75em;
+  font-size: 0.92em;
+}
+
+.step-num {
+  background: $teal;
+  color: $white;
+  font-weight: 700;
+  border-radius: 50%;
+  min-width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.88em;
+  flex-shrink: 0;
+  margin-top: 0.1em;
+}
+
+/* ── Demo slide ───────────────────────────────────────────── */
+.demo-slide {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.demo-content {
+  padding: 1.5em 2em;
+  color: $white;
+
+  hr { border-color: rgba(176,196,216,0.3); margin: 0.8em 0; }
+
+  p { color: $gray; font-size: 1.05em; line-height: 1.9; margin-top: 0.8em; }
+}
+
+.demo-title {
+  font-size: 4.5em !important;
+  color: $teal !important;
+  font-weight: 800 !important;
+  margin: 0 !important;
+  line-height: 1 !important;
+  background: none !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+.demo-subtitle {
+  font-size: 1.8em !important;
+  color: $white !important;
+  font-weight: 700 !important;
+  margin: 0.3em 0 0 0 !important;
+}
+
+/* ── Resource cards ───────────────────────────────────────── */
+.resource-card {
+  background: $white;
+  border: 1px solid $border;
+  border-radius: 8px;
+  padding: 0.65em 1em;
+  margin-bottom: 0.6em;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+  font-size: 0.88em;
+
+  a { color: $teal; text-decoration: none; font-weight: 500; }
+  a:hover { text-decoration: underline; }
+  strong { color: $charcoal; }
+}
+
+/* ── Thanks slide ─────────────────────────────────────────── */
+.thanks-slide {
+  text-align: center;
+  color: $white;
+  padding: 1em;
+
+  hr { border-color: rgba(176,196,216,0.3); margin: 0.8em auto; width: 40%; }
+
+  p { color: $gray; font-size: 0.95em; }
+  a { color: $teal; }
+}
+
+.thanks-title {
+  font-size: 4em !important;
+  color: $white !important;
+  font-weight: 800 !important;
+  margin-bottom: 0.1em !important;
+  background: none !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+.thanks-sub {
+  color: $teal !important;
+  font-weight: 400 !important;
+  font-size: 1.3em !important;
+  margin: 0 !important;
+}
+
+/* ── Caption ──────────────────────────────────────────────── */
+.caption {
+  font-size: 0.75em;
+  color: #6A8BAB;
+  font-style: italic;
+  text-align: center;
+  margin-top: 0.5em;
+}
+
+/* ── Blockquote ───────────────────────────────────────────── */
+.reveal blockquote {
+  background: $white;
+  border-left: 5px solid $teal;
+  color: $charcoal;
+  font-style: normal;
+  font-size: 0.95em;
+  padding: 0.6em 1em;
+  margin: 0 0 0.8em 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+  border-radius: 0 8px 8px 0;
+  width: 100%;
+
+  strong { color: $mid; }
+}
+
+/* ── Code in slides ───────────────────────────────────────── */
+.reveal code {
+  font-family: 'JetBrains Mono', monospace;
+  background: rgba(0,168,150,0.12);
+  color: #0D7A6E;
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+/* ── Columns spacing ──────────────────────────────────────── */
+.reveal .columns {
+  gap: 1.2em;
+}
+
+/* tighten up bullet lists globally */
+.reveal ul { margin: 0.4em 0; }
+.reveal ul li { margin: 0.2em 0; }
