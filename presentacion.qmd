@@ -552,3 +552,5 @@ Cuando trabajás en varios proyectos, es común que uno requiera R 4.2 y otro R 
 -   Mock T (2022) 05 - Presentations. Presentación realizada para RStudio - conf. Disponible en este [enlace](https://rstudio-conf-2022.github.io/get-started-quarto/materials/05-presentations.html#/presentations)
 
 -   Blog de slidecraft 101 [enlace](https://emilhvitfeldt.com/blog#category=slidecraft%20101)
+
+- Plantilla utilizada: [https://github.com/kazuyanagimoto/quarto-awesomecv-typst](https://github.com/kazuyanagimoto/quarto-awesomecv-typst)
