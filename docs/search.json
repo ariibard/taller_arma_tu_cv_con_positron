@@ -102,7 +102,7 @@
     "href": "presentacion.html#instalación",
     "title": "Armá tu CV con positron",
     "section": "Instalación",
-    "text": "Instalación\nEn nuestra terminal:\n\nTerminal\nquarto use template kazuyanagimoto/quarto-awesomecv-typst\n\nInstalamos el paquete en r. Ponemos en la consola:\n\nConsola\ninstall.packages(\"typstcv\", repos = \"https://kazuyanagimoto.r-universe.dev\")\n# Instalamos tidyverse también que nos va a permitir manipular los datos\ninstall.packages(\"tidyverse\")"
+    "text": "Instalación\nAbrimos nuestra carpeta y en nuestra terminal:\n\nTerminal\nquarto use template kazuyanagimoto/quarto-awesomecv-typst\n\nInstalamos el paquete en r. Ponemos en la consola:\n\nConsola\ninstall.packages(\"typstcv\", repos = \"https://kazuyanagimoto.r-universe.dev\")\n# Instalamos tidyverse también que nos va a permitir manipular los datos\ninstall.packages(\"tidyverse\")"
   },
   {
     "objectID": "presentacion.html#the-boy-who-lived-is-a-data-scientist",
@@ -117,6 +117,76 @@
     "title": "Armá tu CV con positron",
     "section": "Armamos nuestro excel o csv",
     "text": "Armamos nuestro excel o csv"
+  },
+  {
+    "objectID": "presentacion.html#paso-1-llenamos-nuestros-datos-en-el-yaml",
+    "href": "presentacion.html#paso-1-llenamos-nuestros-datos-en-el-yaml",
+    "title": "Armá tu CV con positron",
+    "section": "PASO 1: Llenamos nuestros datos en el YAML",
+    "text": "PASO 1: Llenamos nuestros datos en el YAML\n\nmicv.qmd\ntitle: \"CV de Harry Potter\"\nauthor:\n  firstname: Harry\n  lastname: Potter\n  address: \"En algún lado\"\n  position: \"Analista de datos ・ Profesor\"\n  contacts:\n    - icon: fa envelope\n      text: hp@gmail.com\n      url: \"mailto:ahp@gmail.com\"\n    - icon: assets/icon/bi-house-fill.svg\n      text: miportfolio.com\n      url: https://miportfolio.com\n    - icon: fa brands orcid\n      text: 0000-0000-0000-0000\n      url: https://orcid.org/0000-0000-0000-0000"
+  },
+  {
+    "objectID": "presentacion.html#paso-2-configuamos-colores-y-estilos",
+    "href": "presentacion.html#paso-2-configuamos-colores-y-estilos",
+    "title": "Armá tu CV con positron",
+    "section": "PASO 2: Configuamos colores y estilos",
+    "text": "PASO 2: Configuamos colores y estilos\n\nmicv.qmd\nformat: awesomecv-typst\nbrand:\n  typography: \n    fonts:\n      - family: Roboto\n        source: google\n        weight: [100, 400, 700]\n      - family: Source Sans 3\n        source: google\n        weight: [100, 400, 700]\n        style: [normal, italic]\n    base: Source Sans 3\n  color:\n    primary: \"#fd8e73\"\n    link: \"#771822\"\n  defaults: \n    awesomecv-typst:\n      font-header: Roboto"
+  },
+  {
+    "objectID": "presentacion.html#observamos",
+    "href": "presentacion.html#observamos",
+    "title": "Armá tu CV con positron",
+    "section": "Observamos",
+    "text": "Observamos\nSi renderizamos ya podemos ver nuestro CV con los datos personales cargados y nuestro estilo elegido"
+  },
+  {
+    "objectID": "presentacion.html#podemos-agregar-una-foto",
+    "href": "presentacion.html#podemos-agregar-una-foto",
+    "title": "Armá tu CV con positron",
+    "section": "Podemos agregar una foto:",
+    "text": "Podemos agregar una foto:\n\nmicv.qmd\nprofile-photo: \"PATH_TO_PHOTO/photo.jpg\""
+  },
+  {
+    "objectID": "presentacion.html#paso-3-usamos-nuestra-data",
+    "href": "presentacion.html#paso-3-usamos-nuestra-data",
+    "title": "Armá tu CV con positron",
+    "section": "PASO 3: Usamos nuestra data",
+    "text": "PASO 3: Usamos nuestra data\n\nCargamos nuestro archivo y vamos generando nuestras secciones.\n\n\nmicv.qmd\nlibrary(typstcv)\nlibrary(dplyr)\ndf_cv &lt;- readxl::read_excel('harry_potter_cv_es.xlsx')\n\n\nPara que nuestro archivo salga bien hay que pausar los warnings y los chunks\n\n\nmicv.qmd\nexecute: \n  echo: false\n  warning: false"
+  },
+  {
+    "objectID": "presentacion.html#paso-4-para-que-nuestros-datos-se-vean-bonitos",
+    "href": "presentacion.html#paso-4-para-que-nuestros-datos-se-vean-bonitos",
+    "title": "Armá tu CV con positron",
+    "section": "PASO 4: Para que nuestros datos se vean bonitos:",
+    "text": "PASO 4: Para que nuestros datos se vean bonitos:\nDebemos configurar cada chunk con #| output: asis\n\nmicv.qmd\n#| output: asis\n\nlibrary(typstcv)\nlibrary(dplyr)\nlibrary(lubridate)\n\ndf_cv &lt;- readxl::read_excel('harry_potter_cv_es.xlsx') |&gt; \n  mutate(start = as_date(start),\nend = as_date(end))"
+  },
+  {
+    "objectID": "presentacion.html#con-o-sin-asis",
+    "href": "presentacion.html#con-o-sin-asis",
+    "title": "Armá tu CV con positron",
+    "section": "Con o sin asis",
+    "text": "Con o sin asis\n\n\nCon #| output: asis \n\nSin #| output: asis"
+  },
+  {
+    "objectID": "presentacion.html#paso-5-hasta-el-infinito",
+    "href": "presentacion.html#paso-5-hasta-el-infinito",
+    "title": "Armá tu CV con positron",
+    "section": "PASO 5 hasta el infinito:",
+    "text": "PASO 5 hasta el infinito:\nEn cada apartado vamos llamando a nuestro df filtrado por la sección y nombrando las variables para que las reconozca:\nresume_entry() es una función que permite generar entradas al CV desde un dataset\n\nmicv.qmd\ndf_cv |&gt; \n  filter(section == 'educacion') |&gt;\n  format_date(end = \"end\", sort_by = \"start\") |&gt;\n  resume_entry(title = \"role\",\n               description = \"institution\",\n               details = \"descripcion\")\n\n\nDocumentación de las funciones acá"
+  },
+  {
+    "objectID": "presentacion.html#formatear-las-fechas",
+    "href": "presentacion.html#formatear-las-fechas",
+    "title": "Armá tu CV con positron",
+    "section": "Formatear las fechas",
+    "text": "Formatear las fechas\nformat_date() permite no solo ordenar las fechas sino también darle formato con date_format\n\nmicv.qmd\ndf_cv |&gt;\n  filter(section == 'experiencia_laboral') |&gt; \n  format_date(end = \"end\",\n   sort_by = \"start\",\n  date_format = \"%Y\",\n  sep = \"-&gt;\",\n    ) |&gt;\n  typstcv::resume_entry(title = \"role\",\n               description = \"institution\")"
+  },
+  {
+    "objectID": "presentacion.html#otras-formas-de-presentar-la-info",
+    "href": "presentacion.html#otras-formas-de-presentar-la-info",
+    "title": "Armá tu CV con positron",
+    "section": "Otras formas de presentar la info",
+    "text": "Otras formas de presentar la info\ndetails() arma bullets\n\nmicv.qmd\n#| output: asis\n\n  typstcv::resume_entry(title = \"role\",\n               description = \"institution\",\n               details = c(\"description\"),\n               location = \"location\")"
   },
   {
     "objectID": "presentacion.html#section-1",
@@ -154,6 +224,16 @@
     "text": "¿Qué necesitamos?\nDescargá e instalá las últimas versiones de R, Positron y Quarto:\n\nR 4.2.3 o superior: https://cran.r-project.org\nPositron: https://positron.posit.co/download.html\nQuarto 1.4 or superior: https://quarto.org/docs/download\n\nAdemás necesitarás instalar los siguientes paquetes:\ninstall.packages(\"typstcv\", repos = \"https://kazuyanagimoto.r-universe.dev\")\ninstall.packages(\"tidyverse\")\nY, en la terminal instalaremos la siguiente plantilla:\nquarto use template kazuyanagimoto/quarto-awesomecv-typst",
     "crumbs": [
       "¿Qué necesitamos?"
+    ]
+  },
+  {
+    "objectID": "taller.html",
+    "href": "taller.html",
+    "title": "Script utilizado en la charla",
+    "section": "",
+    "text": "---\ntitle: \"CV de Harry Potter\"\nauthor:\n  firstname: Harry\n  lastname: Potter\n  address: \"En algún lado\"\n  position: \"Analista de datos ・ Profesor\"\n  contacts:\n    - icon: fa envelope\n      text: hp@gmail.com\n      url: \"mailto:ahp@gmail.com\"\n    - icon: assets/icon/bi-house-fill.svg\n      text: miportfolio.com\n      url: https://miportfolio.com\n    - icon: fa brands orcid\n      text: 0000-0000-0000-0000\n      url: https://orcid.org/0000-0000-0000-0000\n    - icon: fa brands github\n      text: GitHub\n      url: https://github.com/harrypotter\n    - icon: fa brands linkedin\n      text: LinkedIn\n      url: https://linkedin.com/in/harrypotter\n    - icon: fa brands x-twitter\n      text: twitter\n      url: https://twitter.com/poterh\nformat: awesomecv-typst\nbrand:\n  typography: \n    fonts:\n      - family: Roboto\n        source: google\n        weight: [100, 400, 700]\n      - family: Source Sans 3\n        source: google\n        weight: [100, 400, 700]\n        style: [normal, italic]\n    base: Source Sans 3\n  color:\n    primary: \"#fd8e73\"\n    link: \"#771822\"\n  defaults: \n    awesomecv-typst:\n      font-header: Roboto\nexecute: \n  echo: false\n  warning: false\n  output: false\n---\n\n## Educación\n\n\n```{.r .cell-code}\nlibrary(typstcv)\nlibrary(tidyverse)\n\ndf_cv &lt;- readxl::read_excel('harry_potter_cv_es.xlsx') |&gt; \n  mutate(start = as_date(start),\nend = as_date(end)) |&gt; \n  drop_na(start)\n\ndf_cv |&gt; \n  filter(section == 'educacion') |&gt;\n  format_date(end = \"end\", sort_by = \"start\") |&gt;\n  resume_entry(title = \"role\",\n               description = \"institution\",\n               details = \"descripcion\")\n```\n\n```{=typst}\n#resume-entry(title: \"Graduado – Programa de Formación de Aurores\",location: \"Londres, Reino Unido\",date: \"sept 1998 - jun 2001\",description: \"Oficina de Aurores – Ministerio de Magia\",)\n#resume-item[\n- \n]\n#resume-entry(title: \"A.N.E.A.S. – Colegio Hogwarts\",location: \"Escocia, Reino Unido\",date: \"sept 1991 - jun 1998\",description: \"Colegio Hogwarts de Magia y Hechicería\",)\n#resume-item[\n- \n]\n```\n\n## Experiencia laboral\n\n\n```{.r .cell-code}\ndf_cv |&gt;\n  filter(section == 'experiencia_laboral') |&gt; \n  format_date(end = \"end\",\n   sort_by = \"start\",\n  date_format = \"%Y\",\n  sep = \"-&gt;\",\n    ) |&gt;\n  typstcv::resume_entry(title = \"role\",\n               description = \"institution\")\n```\n\n```{=typst}\n#resume-entry(title: \"Profesor de Defensa (temporal)\",location: \"Escocia, Reino Unido\",date: \"2013-&gt;2013\",description: \"Colegio Hogwarts de Magia y Hechicería\",)\n#resume-entry(title: \"Jefe de Aurores\",location: \"Londres, Reino Unido\",date: \"2007-&gt;2019\",description: \"Oficina de Aurores – Ministerio de Magia\",)\n#resume-entry(title: \"Auror Senior\",location: \"Londres, Reino Unido\",date: \"2001-&gt;2006\",description: \"Oficina de Aurores – Ministerio de Magia\",)\n```\n\n## Experiencia Docente\n\n\n```{.r .cell-code}\ndf_cv |&gt;\n  filter(section == 'experiencia_docente') |&gt; \n  format_date(end = \"end\",\n   sort_by = \"start\",\n  date_format = \"%Y\",\n  sep = \"-&gt;\",\n    ) |&gt;\n  typstcv::resume_entry(title = \"role\",\n               description = \"institution\",\n               details = c(\"description\"),\n               location = \"location\")\n```\n\n```{=typst}\n#resume-entry(title: \"Docente invitado – Evaluación de Amenazas\",location: \"Londres, Reino Unido\",date: \"2018-&gt;2018\",description: \"Academia de Artes Dramáticas de Hechicería\",)\n#resume-item[\n- Dictó dos clases magistrales sobre evaluación práctica de amenazas para magos y brujas en entornos de alto riesgo.\n]\n#resume-entry(title: \"Ejército de Dumbledore – Fundador e Instructor\",location: \"Escocia, Reino Unido\",date: \"1995-&gt;1996\",description: \"Colegio Hogwarts de Magia y Hechicería\",)\n#resume-item[\n- Fundó y lideró un grupo estudiantil de defensa de 28 miembros. Diseñó el programa, coordinó las sesiones y evaluó el progreso en condiciones institucionales adversas.\n]\n```\n\n## Investigación\n\n\n```{.r .cell-code}\ndf_cv |&gt; \n  filter(section == 'investigacion')|&gt;\n  format_date(end = \"end\", sort_by = \"start\") |&gt;\n  resume_entry(title = \"role\",\n               description = \"project\",\n               location = \"institution\",\n               details = \"description\",\n               date = \"start\") \n```\n\n```{=typst}\n#resume-entry(title: \"Investigador de campo\",location: \"División de Analítica de los Insondables\",date: \"ene 2020\",description: \"Modelado Predictivo de Amenazas con R\",)\n#resume-item[\n- Lideró investigación exploratoria sobre el uso de modelos estadísticos (R, tidyverse, ggplot2) para anticipar actividad de magos oscuros. Produjo tres informes internos.\n]\n#resume-entry(title: \"Consultor – Clasificación de Artefactos Oscuros\",location: \"Departamento de Misterios\",date: \"jun 2010\",description: \"Proyecto de Taxonomía de Amenazas Mágicas\",)\n#resume-item[\n- Co-desarrolló un marco de clasificación para objetos malditos. Los resultados fueron adoptados como estándar ministerial en 2012.\n]\n```",
+    "crumbs": [
+      "Taller"
     ]
   }
 ]

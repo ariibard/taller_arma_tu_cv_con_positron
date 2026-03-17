@@ -1,0 +1,127 @@
+---
+title: "Script utilizado en la charla"
+output: false
+---
+
+`````markdown
+
+---
+title: "CV de Harry Potter"
+author:
+  firstname: Harry
+  lastname: Potter
+  address: "En algún lado"
+  position: "Analista de datos ・ Profesor"
+  contacts:
+    - icon: fa envelope
+      text: hp@gmail.com
+      url: "mailto:ahp@gmail.com"
+    - icon: assets/icon/bi-house-fill.svg
+      text: miportfolio.com
+      url: https://miportfolio.com
+    - icon: fa brands orcid
+      text: 0000-0000-0000-0000
+      url: https://orcid.org/0000-0000-0000-0000
+    - icon: fa brands github
+      text: GitHub
+      url: https://github.com/harrypotter
+    - icon: fa brands linkedin
+      text: LinkedIn
+      url: https://linkedin.com/in/harrypotter
+    - icon: fa brands x-twitter
+      text: twitter
+      url: https://twitter.com/poterh
+format: awesomecv-typst
+brand:
+  typography: 
+    fonts:
+      - family: Roboto
+        source: google
+        weight: [100, 400, 700]
+      - family: Source Sans 3
+        source: google
+        weight: [100, 400, 700]
+        style: [normal, italic]
+    base: Source Sans 3
+  color:
+    primary: "#fd8e73"
+    link: "#771822"
+  defaults: 
+    awesomecv-typst:
+      font-header: Roboto
+execute: 
+  echo: false
+  warning: false
+  output: false
+---
+
+## Educación
+
+```{r}
+#| output: asis
+
+library(typstcv)
+library(tidyverse)
+
+df_cv <- readxl::read_excel('harry_potter_cv_es.xlsx') |> 
+  mutate(start = as_date(start),
+end = as_date(end)) |> 
+  drop_na(start)
+
+df_cv |> 
+  filter(section == 'educacion') |>
+  format_date(end = "end", sort_by = "start") |>
+  resume_entry(title = "role",
+               description = "institution",
+               details = "descripcion")
+
+```
+
+## Experiencia laboral
+
+```{r}
+#| output: asis
+df_cv |>
+  filter(section == 'experiencia_laboral') |> 
+  format_date(end = "end",
+   sort_by = "start",
+  date_format = "%Y",
+  sep = "->",
+    ) |>
+  typstcv::resume_entry(title = "role",
+               description = "institution")
+```
+
+## Experiencia Docente
+
+```{r}
+#| output: asis
+
+df_cv |>
+  filter(section == 'experiencia_docente') |> 
+  format_date(end = "end",
+   sort_by = "start",
+  date_format = "%Y",
+  sep = "->",
+    ) |>
+  typstcv::resume_entry(title = "role",
+               description = "institution",
+               details = c("description"),
+               location = "location")
+```
+
+## Investigación
+
+```{r}
+#| output: asis
+
+df_cv |> 
+  filter(section == 'investigacion')|>
+  format_date(end = "end", sort_by = "start") |>
+  resume_entry(title = "role",
+               description = "project",
+               location = "institution",
+               details = "description",
+               date = "start") 
+```
+`````

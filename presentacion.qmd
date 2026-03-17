@@ -74,7 +74,7 @@ Fuente: /https://posit-dev.github.io/positron-workshop/slides/02-explore.pdf
 ## Positron vs RStudio {background-color="#F0F8FF"}
 
 |               | **RStudio**                   | **Positron**                   |
-|--------------|----------------------------|------------------------------|
+|---------------|-------------------------------|--------------------------------|
 | Lenguajes     | Solo R                        | R y Python nativamente         |
 | Navegación    | Menús y botones               | Command Palette + clic derecho |
 | Paneles       | Environment / History / Files | Variables · Explorer · Git     |
@@ -221,11 +221,6 @@ mi-proyecto/
 
 # Armemos nuestro **CV** {.title-text .center style="text-align: center;" background-color="#6A94B4"}
 
-
-
-
-
-
 ## Antes de arrancar
 
 ::: {.fragment .fade-in-then-out .r-fit-text}
@@ -246,8 +241,7 @@ Sé qué es `Quarto` / `Rmarkdown` pero nunca lo usé 🙋‍♀️
 
 # `{typst}`
 
-:::: {.columns}
-
+::::: columns
 ::: {.column width="40%"}
 ![](https://cdn-1.webcatalog.io/catalog/typst/typst-icon-filled-256.png?v=1714780823305)
 :::
@@ -255,8 +249,7 @@ Sé qué es `Quarto` / `Rmarkdown` pero nunca lo usé 🙋‍♀️
 ::: {.column width="60%"}
 Es un sistema de composición de documentos (como Latex). Mucho más intuitivo y rápido.
 :::
-
-::::
+:::::
 
 ::: footer
 Más info en [typst.app](https://typst.app/)
@@ -264,7 +257,7 @@ Más info en [typst.app](https://typst.app/)
 
 ## Extensiones en `{quarto}`
 
-Es un paquete que amplía las capacidades del sistema de publicación Quarto. Quarto por sí solo ya permite generar documentos, sitios web, presentaciones y más desde R o Python; una extensión agrega funcionalidades extra, como nuevos formatos de salida, plantillas, filtros de transformación, shortcodes personalizados o plugins para presentaciones. 
+Es un paquete que amplía las capacidades del sistema de publicación Quarto. Quarto por sí solo ya permite generar documentos, sitios web, presentaciones y más desde R o Python; una extensión agrega funcionalidades extra, como nuevos formatos de salida, plantillas, filtros de transformación, shortcodes personalizados o plugins para presentaciones.
 
 ## `{awesomecv}`
 
@@ -272,26 +265,28 @@ Es un paquete que amplía las capacidades del sistema de publicación Quarto. Qu
 
 ::: callout-tip
 ## Fuente
+
 Plantilla de Kazuya Nagimoto — [quarto-awesomecv-typst](https://github.com/kazuyanagimoto/quarto-awesomecv-typst)
 :::
 
+## Instalación
 
-## Instalación 
+Abrimos nuestra carpeta y en nuestra terminal:
 
-En nuestra terminal: 
-
-::: {.codewindow}
+::: codewindow
 Terminal
-```bash
+
+``` bash
 quarto use template kazuyanagimoto/quarto-awesomecv-typst
 ```
 :::
 
 Instalamos el paquete en `r`. Ponemos en la consola:
 
-::: {.codewindow}
+::: codewindow
 Consola
-```r
+
+``` r
 install.packages("typstcv", repos = "https://kazuyanagimoto.r-universe.dev")
 # Instalamos tidyverse también que nos va a permitir manipular los datos
 install.packages("tidyverse")
@@ -300,8 +295,7 @@ install.packages("tidyverse")
 
 ## The boy who lived is a data scientist
 
-:::: {.columns}
-
+::::: columns
 ::: {.column width="40%"}
 ![](assets/hp.jpg)
 :::
@@ -309,9 +303,7 @@ install.packages("tidyverse")
 ::: {.column width="60%"}
 Harry Potter lleva 20 años como Auror, pero descubrió que le apasiona el análisis de datos. Ahora quiere postularse como Analista de Ciencias de Datos en el Ministerio de Magia. Para mostrar cómo funciona esta herramienta, vamos a usar su caso
 :::
-
-::::
-
+:::::
 
 ## Armamos nuestro excel o csv {.smaller}
 
@@ -323,9 +315,194 @@ df_cv <- readxl::read_excel('harry_potter_cv_es.xlsx')
 DT::datatable(df_cv)
 ```
 
-# Manos a la obra! 
+# Manos a la obra!
 
-![](https://i.pinimg.com/originals/79/96/78/799678c8df8a0cf077842a3f124a64f1.png) 
+![](https://i.pinimg.com/originals/79/96/78/799678c8df8a0cf077842a3f124a64f1.png)
+
+
+## PASO 1: Llenamos nuestros datos en el YAML
+::: {.codewindow .quarto}
+micv.qmd
+```yaml
+title: "CV de Harry Potter"
+author:
+  firstname: Harry
+  lastname: Potter
+  address: "En algún lado"
+  position: "Analista de datos ・ Profesor"
+  contacts:
+    - icon: fa envelope
+      text: hp@gmail.com
+      url: "mailto:ahp@gmail.com"
+    - icon: assets/icon/bi-house-fill.svg
+      text: miportfolio.com
+      url: https://miportfolio.com
+    - icon: fa brands orcid
+      text: 0000-0000-0000-0000
+      url: https://orcid.org/0000-0000-0000-0000
+```
+:::
+
+## PASO 2: Configuamos colores y estilos
+::: {.codewindow .quarto}
+micv.qmd
+```yaml
+format: awesomecv-typst
+brand:
+  typography: 
+    fonts:
+      - family: Roboto
+        source: google
+        weight: [100, 400, 700]
+      - family: Source Sans 3
+        source: google
+        weight: [100, 400, 700]
+        style: [normal, italic]
+    base: Source Sans 3
+  color:
+    primary: "#fd8e73"
+    link: "#771822"
+  defaults: 
+    awesomecv-typst:
+      font-header: Roboto
+```
+:::
+
+## Observamos
+Si renderizamos ya podemos ver nuestro CV con los datos personales cargados y nuestro estilo elegido
+
+![](assets/paso1.png)
+
+## Podemos agregar una foto:
+
+::: {.codewindow .quarto}
+micv.qmd
+```r
+profile-photo: "PATH_TO_PHOTO/photo.jpg"
+```
+:::
+
+## PASO 3: Usamos nuestra data
+
+1. Cargamos nuestro archivo y vamos generando nuestras secciones. 
+
+::: {.codewindow .quarto}
+micv.qmd
+```r
+library(typstcv)
+library(dplyr)
+df_cv <- readxl::read_excel('harry_potter_cv_es.xlsx')
+```
+:::
+
+2. Para que nuestro archivo salga bien hay que pausar los warnings y los chunks
+
+::: {.codewindow .quarto}
+micv.qmd
+```r
+execute: 
+  echo: false
+  warning: false
+```
+:::
+
+## PASO 4: Para que nuestros datos se vean bonitos: 
+
+Debemos configurar cada chunk con `#| output: asis`
+
+::: {.codewindow .quarto}
+micv.qmd
+```r
+#| output: asis
+
+library(typstcv)
+library(dplyr)
+library(lubridate)
+
+df_cv <- readxl::read_excel('harry_potter_cv_es.xlsx') |> 
+  mutate(start = as_date(start),
+end = as_date(end))
+
+```
+:::
+
+## Con o sin `asis`
+
+::::: columns
+::: {.column width="40%"}
+Con `#| output: asis`
+![](assets/con_config.png)
+:::
+
+::: {.column width="60%"}
+Sin `#| output: asis`
+![](assets/sin_config.png)
+
+:::
+:::::
+
+## PASO 5 hasta el infinito:
+
+En cada apartado vamos llamando a nuestro df filtrado por la sección y nombrando las variables para que las reconozca:
+
+`resume_entry()` es una función que permite generar entradas al CV desde un dataset 
+
+:::{.codewindow .quarto}
+micv.qmd
+```r
+df_cv |> 
+  filter(section == 'educacion') |>
+  format_date(end = "end", sort_by = "start") |>
+  resume_entry(title = "role",
+               description = "institution",
+               details = "descripcion")
+```
+:::
+
+::: footer
+Documentación de las funciones [acá](https://kazuyanagimoto.com/typstcv/)
+:::
+
+## Formatear las fechas
+
+`format_date()` permite no solo ordenar las fechas sino también darle formato con `date_format`
+
+::: {.codewindow .quarto}
+micv.qmd
+```r
+df_cv |>
+  filter(section == 'experiencia_laboral') |> 
+  format_date(end = "end",
+   sort_by = "start",
+  date_format = "%Y",
+  sep = "->",
+    ) |>
+  typstcv::resume_entry(title = "role",
+               description = "institution")
+```
+:::
+
+## Otras formas de presentar la info
+
+`details()` arma bullets
+
+:::{.codewindow .quarto}
+micv.qmd
+
+```r
+#| output: asis
+
+  typstcv::resume_entry(title = "role",
+               description = "institution",
+               details = c("description"),
+               location = "location")
+```
+:::
+
+![](assets/bullets.png)
+
+# Ya tenemos nuestro CV! 
+
 
 ##  {.center style="text-align: center;" background-color="#6A94B4"}
 

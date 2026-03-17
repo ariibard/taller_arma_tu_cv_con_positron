@@ -23,6 +23,8 @@ website:
         text: ¿Qué necesitamos?
       - href: about.qmd
         text: Diapositivas
+      - href: taller.qmd
+        text: Taller
 
 format:
   html:
