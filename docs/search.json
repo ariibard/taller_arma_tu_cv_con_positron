@@ -228,7 +228,7 @@
     "href": "index.html",
     "title": "¿Qué necesitamos?",
     "section": "",
-    "text": "¿Qué necesitamos?\nDescargá e instalá las últimas versiones de R, Positron y Quarto:\n\nR 4.2.3 o superior: https://cran.r-project.org\nPositron: https://positron.posit.co/download.html\nQuarto 1.4 or superior: https://quarto.org/docs/download\n\nAdemás necesitarás instalar los siguientes paquetes:\ninstall.packages(\"typstcv\", repos = \"https://kazuyanagimoto.r-universe.dev\")\ninstall.packages(\"tidyverse\")\nY, en la terminal instalaremos la siguiente plantilla:\nquarto use template kazuyanagimoto/quarto-awesomecv-typst",
+    "text": "¿Qué necesitamos?\nDescargá e instalá las últimas versiones de R, Positron y Quarto:\n\nR 4.2.3 o superior: https://cran.r-project.org\nPositron: https://positron.posit.co/download.html\n\nAdemás necesitarás instalar los siguientes paquetes:\ninstall.packages(\"typstcv\", repos = \"https://kazuyanagimoto.r-universe.dev\")\ninstall.packages(\"tidyverse\")\nY, en la terminal instalaremos la siguiente plantilla:\nquarto use template kazuyanagimoto/quarto-awesomecv-typst",
     "crumbs": [
       "¿Qué necesitamos?"
     ]
