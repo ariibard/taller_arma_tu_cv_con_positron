@@ -207,14 +207,21 @@
     "href": "presentacion.html#rig-el-gestor-de-versiones-de-r",
     "title": "Armá tu CV con positron",
     "section": "📦 rig: el gestor de versiones de R",
-    "text": "📦 rig: el gestor de versiones de R\nrig (R Installation Manager) es una herramienta de línea de comandos que te permite instalar y administrar múltiples versiones de R en la misma máquina, de forma limpia y sin conflictos.\n¿Por qué importa?\nCuando trabajás en varios proyectos, es común que uno requiera R 4.2 y otro R 4.4. Sin un gestor, cambiar de versión manualmente es tedioso y propenso a errores. rig lo hace en un solo comando.\n\nInstala y desinstala versiones de R — rig add 4.4.0, rig rm 4.2.1\nCambia la versión por defecto — rig default 4.4.0\nCrea librerías de paquetes separadas por versión — cada R tiene sus propios paquetes instalados, sin pisar los de otras versiones\n\n\n🔗 Instalación: github.com/r-lib/rig"
+    "text": "📦 rig: el gestor de versiones de R\nrig (R Installation Manager) es una herramienta de línea de comandos que te permite instalar y administrar múltiples versiones de R en la misma máquina, de forma limpia y sin conflictos.\n¿Por qué importa?\nCuando trabajás en varios proyectos, es común que uno requiera R 4.2 y otro R 4.4.\n\nInstala y desinstala versiones de R — rig add 4.4.0, rig rm 4.2.1\nCambia la versión por defecto — rig default 4.4.0\nCrea librerías de paquetes separadas por versión — cada R tiene sus propios paquetes instalados, sin pisar los de otras versiones\n\n\n🔗 Instalación: github.com/r-lib/rig"
   },
   {
     "objectID": "presentacion.html#air-formateador-de-código-r",
     "href": "presentacion.html#air-formateador-de-código-r",
     "title": "Armá tu CV con positron",
     "section": "🖊️ Air: formateador de código R",
-    "text": "🖊️ Air: formateador de código R\nAir es un formateador de código R automático, similar a lo que hace prettier en JavaScript o black en Python. Su función es tomar tu código y dejarlo con un estilo consistente, sin que tengas que pensar en la indentación, los espacios o el largo de las líneas.\n\nFormatea automáticamente al guardar el archivo (si lo configurás así en Positron)\nSigue convenciones ampliamente adoptadas en la comunidad R\nConfigurable a nivel usuario (global) o por proyecto (.air.toml)\nIntegrado con Positron — aparece como formateador disponible en la configuración del editor\n\n\n🔗 Más info: posit-dev.github.io/air"
+    "text": "🖊️ Air: formateador de código R\nAir es un formateador de código R automático, similar a lo que hace prettier en JavaScript o black en Python. Su función es tomar tu código y dejarlo con un estilo consistente, sin que tengas que pensar en la indentación, los espacios o el largo de las líneas.\n\nFormatea automáticamente al guardar el archivo (si lo configurás así en Positron)\nConfigurable a nivel usuario (global) o por proyecto (.air.toml)\nIntegrado con Positron — aparece como formateador disponible en la configuración del editor\n\n\n🔗 Más info: posit-dev.github.io/air"
+  },
+  {
+    "objectID": "presentacion.html#antes-de-irte",
+    "href": "presentacion.html#antes-de-irte",
+    "title": "Armá tu CV con positron",
+    "section": "Antes de irte!",
+    "text": "Antes de irte!\n\n\n\n\n\nInicio: 8 o 9 de abril\nDuración: 8 semanas Modalidad:\nOnline en vivo\nNo se requieren conocimientos previos\n\n\nCódigo promocional (15%): YOCURSEENNIS\n\n\n\n\n\n\n\nImportant\n\n\nMás información en este link o escribiendo a info@nucleodeinnovacion.com"
   },
   {
     "objectID": "index.html",

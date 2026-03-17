@@ -34,11 +34,11 @@ armar mi [CV]{.flow-quarto} en
 ::: dark-card
 **Un IDE de nueva generación**
 
--   Desarrollado por Posit (ex-RStudio)
--   Basado en VS Code (open source)
--   Soporte nativo para **R y Python**
--   Integra Quarto de fábrica
--   Actualmente en Beta (2024–2025)
+- Desarrollado por Posit (ex-RStudio)
+- Basado en VS Code (open source)
+- Soporte nativo para **R y Python**
+- Integra Quarto de fábrica
+- Actualmente en Beta (2024–2025)
 :::
 ::::
 
@@ -74,7 +74,7 @@ Fuente: /https://posit-dev.github.io/positron-workshop/slides/02-explore.pdf
 ## Positron vs RStudio {background-color="#F0F8FF"}
 
 |               | **RStudio**                   | **Positron**                   |
-|---------------|-------------------------------|--------------------------------|
+|------------------|---------------------------|----------------------------|
 | Lenguajes     | Solo R                        | R y Python nativamente         |
 | Navegación    | Menús y botones               | Command Palette + clic derecho |
 | Paneles       | Environment / History / Files | Variables · Explorer · Git     |
@@ -173,10 +173,10 @@ Acceso al registro Open VSX. Miles de extensiones disponibles.
 ::: dark-card
 **¿Para qué sirve?**
 
--   Tarea larga en una sesión → seguir trabajando en otra
--   Comparar dos versiones de R o de un paquete en vivo
--   Desarrollar una vignette en sesión aislada
--   Probar que tu código funciona en la versión del servidor
+- Tarea larga en una sesión → seguir trabajando en otra
+- Comparar dos versiones de R o de un paquete en vivo
+- Desarrollar una vignette en sesión aislada
+- Probar que tu código funciona en la versión del servidor
 :::
 ::::
 ::::::::::
@@ -185,9 +185,9 @@ Acceso al registro Open VSX. Miles de extensiones disponibles.
 
 ## 📁 RStudio: Proyectos con `.Rproj`
 
--   Coloca un archivo **`.Rproj`** en la carpeta para designarla como proyecto.
--   Ese archivo almacena preferencias a nivel de proyecto (codificación, tipo de indentación, wrap de Markdown, etc.).
--   Sirve para **lanzar el proyecto** directamente y como **ancla de la raíz** (usado por `here::here()`).
+- Coloca un archivo **`.Rproj`** en la carpeta para designarla como proyecto.
+- Ese archivo almacena preferencias a nivel de proyecto (codificación, tipo de indentación, wrap de Markdown, etc.).
+- Sirve para **lanzar el proyecto** directamente y como **ancla de la raíz** (usado por `here::here()`).
 
 ```         
 mi-proyecto/
@@ -199,9 +199,9 @@ mi-proyecto/
 
 ## 📂 Positron: Carpetas sin archivo especial
 
--   Positron **no coloca ningún archivo** equivalente al `.Rproj` en la carpeta.
--   Si se configuran preferencias a nivel de espacio de trabajo, se crea automáticamente un archivo **`.vscode/settings.json`** para almacenarlas.
--   `here::here()` sigue funcionando, pero encuentra la raíz a través de la carpeta **`.git`** (no del `.Rproj`).
+- Positron **no coloca ningún archivo** equivalente al `.Rproj` en la carpeta.
+- Si se configuran preferencias a nivel de espacio de trabajo, se crea automáticamente un archivo **`.vscode/settings.json`** para almacenarlas.
+- `here::here()` sigue funcionando, pero encuentra la raíz a través de la carpeta **`.git`** (no del `.Rproj`).
 
 ```         
 mi-proyecto/
@@ -215,9 +215,9 @@ mi-proyecto/
 
 ## ⚠️ El archivo `.Rproj` en Positron
 
--   Positron **ignora el contenido** del `.Rproj`: no lee sus preferencias.
--   Preferencias como `UseSpacesForTab`, `MarkdownWrap` o `NumSpacesForTab` deberán configurarse manualmente en Positron.
--   Para proyectos Quarto, algunas de esas preferencias conviene migrarlas a `_quarto.yml`.
+- Positron **ignora el contenido** del `.Rproj`: no lee sus preferencias.
+- Preferencias como `UseSpacesForTab`, `MarkdownWrap` o `NumSpacesForTab` deberán configurarse manualmente en Positron.
+- Para proyectos Quarto, algunas de esas preferencias conviene migrarlas a `_quarto.yml`.
 
 # Armemos nuestro **CV** {.title-text .center style="text-align: center;" background-color="#6A94B4"}
 
@@ -319,11 +319,12 @@ DT::datatable(df_cv)
 
 ![](https://i.pinimg.com/originals/79/96/78/799678c8df8a0cf077842a3f124a64f1.png)
 
-
 ## PASO 1: Llenamos nuestros datos en el YAML
+
 ::: {.codewindow .quarto}
 micv.qmd
-```yaml
+
+``` yaml
 title: "CV de Harry Potter"
 author:
   firstname: Harry
@@ -344,9 +345,11 @@ author:
 :::
 
 ## PASO 2: Configuamos colores y estilos
+
 ::: {.codewindow .quarto}
 micv.qmd
-```yaml
+
+``` yaml
 format: awesomecv-typst
 brand:
   typography: 
@@ -369,6 +372,7 @@ brand:
 :::
 
 ## Observamos
+
 Si renderizamos ya podemos ver nuestro CV con los datos personales cargados y nuestro estilo elegido
 
 ![](assets/paso1.png)
@@ -377,42 +381,46 @@ Si renderizamos ya podemos ver nuestro CV con los datos personales cargados y nu
 
 ::: {.codewindow .quarto}
 micv.qmd
-```r
+
+``` r
 profile-photo: "PATH_TO_PHOTO/photo.jpg"
 ```
 :::
 
 ## PASO 3: Usamos nuestra data
 
-1. Cargamos nuestro archivo y vamos generando nuestras secciones. 
+1.  Cargamos nuestro archivo y vamos generando nuestras secciones.
 
 ::: {.codewindow .quarto}
 micv.qmd
-```r
+
+``` r
 library(typstcv)
 library(dplyr)
 df_cv <- readxl::read_excel('harry_potter_cv_es.xlsx')
 ```
 :::
 
-2. Para que nuestro archivo salga bien hay que pausar los warnings y los chunks
+2.  Para que nuestro archivo salga bien hay que pausar los warnings y los chunks
 
 ::: {.codewindow .quarto}
 micv.qmd
-```r
+
+``` r
 execute: 
   echo: false
   warning: false
 ```
 :::
 
-## PASO 4: Para que nuestros datos se vean bonitos: 
+## PASO 4: Para que nuestros datos se vean bonitos:
 
 Debemos configurar cada chunk con `#| output: asis`
 
 ::: {.codewindow .quarto}
 micv.qmd
-```r
+
+``` r
 #| output: asis
 
 library(typstcv)
@@ -422,22 +430,18 @@ library(lubridate)
 df_cv <- readxl::read_excel('harry_potter_cv_es.xlsx') |> 
   mutate(start = as_date(start),
 end = as_date(end))
-
 ```
 :::
 
 ## Con o sin `asis`
 
 ::::: columns
-::: {.column width="40%"}
-Con `#| output: asis`
-![](assets/con_config.png)
+::: {.column width="50%"}
+Con `#| output: asis` ![](assets/con_config.png)
 :::
 
-::: {.column width="60%"}
-Sin `#| output: asis`
-![](assets/sin_config.png)
-
+::: {.column width="50%"}
+Sin `#| output: asis` ![](assets/sin_config.png)
 :::
 :::::
 
@@ -445,11 +449,12 @@ Sin `#| output: asis`
 
 En cada apartado vamos llamando a nuestro df filtrado por la sección y nombrando las variables para que las reconozca:
 
-`resume_entry()` es una función que permite generar entradas al CV desde un dataset 
+`resume_entry()` es una función que permite generar entradas al CV desde un dataset
 
-:::{.codewindow .quarto}
+::: {.codewindow .quarto}
 micv.qmd
-```r
+
+``` r
 df_cv |> 
   filter(section == 'educacion') |>
   format_date(end = "end", sort_by = "start") |>
@@ -469,7 +474,8 @@ Documentación de las funciones [acá](https://kazuyanagimoto.com/typstcv/)
 
 ::: {.codewindow .quarto}
 micv.qmd
-```r
+
+``` r
 df_cv |>
   filter(section == 'experiencia_laboral') |> 
   format_date(end = "end",
@@ -486,10 +492,10 @@ df_cv |>
 
 `details()` arma bullets
 
-:::{.codewindow .quarto}
+::: {.codewindow .quarto}
 micv.qmd
 
-```r
+``` r
 #| output: asis
 
   typstcv::resume_entry(title = "role",
@@ -501,8 +507,7 @@ micv.qmd
 
 ![](assets/bullets.png)
 
-# Ya tenemos nuestro CV! 
-
+# Ya tenemos nuestro CV!
 
 ##  {.center style="text-align: center;" background-color="#6A94B4"}
 
@@ -516,9 +521,9 @@ Otras cositas de
 
 Positron incluye **Positron Assistant**, un cliente de IA integrado directamente en el IDE. Tiene dos modos:
 
--   Se activa desde el ícono en la barra lateral izquierda.
--   Podés agregar contexto: el archivo actual, una selección de código, o datos del entorno.
--   Se puede usar también dentro del editor.
+- Se activa desde el ícono en la barra lateral izquierda.
+- Podés agregar contexto: el archivo actual, una selección de código, o datos del entorno.
+- Se puede usar también dentro del editor.
 
 ## 📦 rig: el gestor de versiones de R
 
@@ -526,31 +531,57 @@ Positron incluye **Positron Assistant**, un cliente de IA integrado directamente
 
 ### ¿Por qué importa? {.smaller}
 
-Cuando trabajás en varios proyectos, es común que uno requiera R 4.2 y otro R 4.4. Sin un gestor, cambiar de versión manualmente es tedioso y propenso a errores. rig lo hace en un solo comando.
+Cuando trabajás en varios proyectos, es común que uno requiera R 4.2 y otro R 4.4.
 
--   **Instala y desinstala versiones de R** — `rig add 4.4.0`, `rig rm 4.2.1`
--   **Cambia la versión por defecto** — `rig default 4.4.0`
--   **Crea librerías de paquetes separadas por versión** — cada R tiene sus propios paquetes instalados, sin pisar los de otras versiones
+- **Instala y desinstala versiones de R** — `rig add 4.4.0`, `rig rm 4.2.1`
+- **Cambia la versión por defecto** — `rig default 4.4.0`
+- **Crea librerías de paquetes separadas por versión** — cada R tiene sus propios paquetes instalados, sin pisar los de otras versiones
 
 > 🔗 Instalación: [github.com/r-lib/rig](https://github.com/r-lib/rig)
 
-## 🖊️ Air: formateador de código R
+## 🖊️ Air: formateador de código R {.smaller}
 
 **Air** es un formateador de código R automático, similar a lo que hace `prettier` en JavaScript o `black` en Python. Su función es tomar tu código y dejarlo con un estilo consistente, sin que tengas que pensar en la indentación, los espacios o el largo de las líneas.
 
--   **Formatea automáticamente** al guardar el archivo (si lo configurás así en Positron)
--   **Sigue convenciones ampliamente adoptadas** en la comunidad R
--   **Configurable** a nivel usuario (global) o por proyecto (`.air.toml`)
--   **Integrado con Positron** — aparece como formateador disponible en la configuración del editor
+- **Formatea automáticamente** al guardar el archivo (si lo configurás así en Positron)
+- **Configurable** a nivel usuario (global) o por proyecto (`.air.toml`)
+- **Integrado con Positron** — aparece como formateador disponible en la configuración del editor
 
 > 🔗 Más info: [posit-dev.github.io/air](https://posit-dev.github.io/air)
 
+## Antes de irte!
+
+::::: columns
+::: {.column width="40%"}
+![](assets/cursor.png)
+:::
+
+::: {.column width="60%"}
+- **Inicio**: 8 o 9 de abril
+
+- **Duración**: 8 semanas Modalidad:
+
+- **Online** en vivo
+
+- No se requieren conocimientos previos
+
+> Código promocional (15%): **YOCURSEENNIS** 
+
+::: callout-important
+
+Más información en este [link](https://nucleodeinnovacionsocial.com.ar/cursos/intro_r) o escribiendo a info@nucleodeinnovacion.com
+:::
+:::
+:::::
+
+
+
 # Fuentes
 
--   Formoso, J (2024). Transforma tus datos en historias visuales con Quarto. Disponible en este [enlace](https://github.com/JFormoso/quarto-rladiesBA)
+- Formoso, J (2024). Transforma tus datos en historias visuales con Quarto. Disponible en este [enlace](https://github.com/JFormoso/quarto-rladiesBA)
 
--   Blog de slidecraft 101 [enlace](https://emilhvitfeldt.com/blog#category=slidecraft%20101)
+- Blog de slidecraft 101 [enlace](https://emilhvitfeldt.com/blog#category=slidecraft%20101)
 
-- Plantilla utilizada: [https://github.com/kazuyanagimoto/quarto-awesomecv-typst](https://github.com/kazuyanagimoto/quarto-awesomecv-typst)
+- Plantilla utilizada: <https://github.com/kazuyanagimoto/quarto-awesomecv-typst>
 
-- [Getting started with positron](https://posit-dev.github.io/positron-workshop/) 
+- [Getting started with positron](https://posit-dev.github.io/positron-workshop/)
