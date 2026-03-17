@@ -525,11 +525,11 @@ Positron incluye **Positron Assistant**, un cliente de IA integrado directamente
 - Podés agregar contexto: el archivo actual, una selección de código, o datos del entorno.
 - Se puede usar también dentro del editor.
 
-## 📦 rig: el gestor de versiones de R
+## 📦 rig: el gestor de versiones de R {.smaller}
 
 **rig** (*R Installation Manager*) es una herramienta de línea de comandos que te permite instalar y administrar múltiples versiones de R en la misma máquina, de forma limpia y sin conflictos.
 
-### ¿Por qué importa? {.smaller}
+### ¿Por qué importa? 
 
 Cuando trabajás en varios proyectos, es común que uno requiera R 4.2 y otro R 4.4.
 
