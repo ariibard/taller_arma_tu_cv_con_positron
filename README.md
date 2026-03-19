@@ -24,6 +24,6 @@ Creative Commons Atribución 4.0 Internacional (CC BY 4.0).
 
 Podés reutilizarlo, adaptarlo y compartirlo con fines educativos, siempre que cites la fuente original.
 
-##✍️ Cómo citar
+## ✍️ Cómo citar
 
 Bardauil, Ariana (2026). Armá tu CV en Positron. Disponible en: https://ariibard.github.io/taller_arma_tu_cv_con_positron/
