@@ -19,6 +19,8 @@ website:
     type: dark
     
     contents:
+      - href: hola.qmd
+        text: Bienvenida
       - href: index.qmd
         text: ¿Qué necesitamos?
       - href: about.qmd

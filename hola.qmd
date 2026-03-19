@@ -1,0 +1,38 @@
+---
+title: "¡Hola!"
+format: 
+  html:
+    toc: false
+    theme: cosmo
+---
+
+¡Te damos la bienvenida al taller **"Armá tu CV en Positron"**!
+
+En este encuentro práctico vas a aprender a usar **Positron**, la nueva IDE de Posit, mientras creás tu propio CV utilizando **Quarto** y **Typst** de forma simple y reproducible.
+
+La idea es que te lleves no solo un CV terminado, sino también una herramienta que puedas seguir mejorando y adaptando según tus necesidades.
+
+## Materiales del taller
+
+En este repositorio vas a encontrar todos los materiales utilizados durante el taller, incluyendo:
+
+- Ejemplos de CV  
+- Archivos `.qmd`  
+- Versiones finales listas para usar  
+- Recursos y plantillas  
+
+🔗 Repositorio: [https://github.com/ariibard/materiales_taller_arma_tu_cv_con_positron](https://github.com/ariibard/materiales_taller_arma_tu_cv_con_positron)  
+
+Te recomendamos guardarlo para poder volver a consultarlo y seguir trabajando en tu CV después del encuentro.
+
+## Licencia
+
+Este material se distribuye bajo la licencia  
+**Creative Commons Atribución 4.0 Internacional (CC BY 4.0)**.
+
+Podés reutilizarlo, adaptarlo y compartirlo con fines educativos, siempre que cites la fuente original.
+
+**Cómo citar:**
+
+> Bardauil, Ariana (2026). *Armá tu CV en Positron*.  
+> Disponible en: https://ariibard.github.io/taller_arma_tu_cv_con_positron/
